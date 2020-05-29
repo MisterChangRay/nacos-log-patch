@@ -30,3 +30,13 @@ nacos.config.type=properties
 # 注意事项
 1. 日志配置应该以 `com.custom.log` 为前缀
 2. xml 中请注意应该引入springcontetxt中得配置
+3. 日志配置后期不能动态修改
+
+# 原理
+利用spring提供得spi机制, 在日志框架初始化前加载nacos得配置文件; 从而使日志框架能正确引用nacos配置
+
+
+# 测试环境
+1. springboot 1.5.12.RELEASE
+2. nacos V1.1.4
+3. jdk 1.8
