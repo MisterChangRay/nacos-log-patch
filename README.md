@@ -2,7 +2,7 @@
 nacos配置中心, 日志增强插件, 目前有bug 不能在日志启动前加载配置
 
 # 需求介绍
-公司在使用阿里云日志得时候, 日志配置文件中得某些配置不能动态从nacos中获取。
+公司在使用阿里云日志得时候, 日志配置文件中的配置不能动态从nacos中获取。
 目前公司使用nacos版本 V1.1.4;
 
 nacos 默认提供一下配置进行：
@@ -13,7 +13,7 @@ nacos.config.namespace=8eac56d7-6b0a-4581-ab13-67bb62f71c76
 nacos.config.auto-refresh=true
 nacos.config.bootstrap.enable=true
 # 此行开启nacos可在日志框架加载前进行加载
-nacos.config.bootstrap.log-enable-patch=true
+nacos.config.bootstrap.log-enable=true
 ## 左边配置的会覆盖右边的配置
 nacos.config.data-ids=com-xd-device-common.properties
 nacos.config.type=properties
@@ -23,8 +23,8 @@ nacos.config.type=properties
 
 # 快速使用
 1. 引入jar包
-2. 在以上配置上加入 `nacos.config.bootstrap.log-enable-patch=true` 配置
-3. 启动项目即可正确加载
+2. 在以上配置的基础上加入 `nacos.config.bootstrap.log-enable-patch=true` 配置
+3. 启动项目即可正确加载线上配置
 
 
 # 注意事项
